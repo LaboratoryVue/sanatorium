@@ -14,8 +14,8 @@
       </div>
       <div class="col-6">
         <h4 class="mb-4">по названию объекта</h4>
-        <button type="button" class="text-capitalize btn btn-primary mr-2">up</button>
-        <button type="button" class="text-capitalize btn btn-primary mr-2">down</button>
+        <button @click="sortUpByName()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+        <button @click="sortDownByName()" type="button" class="text-capitalize btn btn-primary mr-2">down</button>
       </div>
     </div>
     <div class="row">
@@ -45,6 +45,12 @@
       },
       sortDownByStars() {
         this.$store.dispatch('sortDownByStars')
+      },
+      sortUpByName() {
+        this.$store.dispatch('sortUpByName')
+      },
+      sortDownByName() {
+        this.$store.dispatch('sortDownByName')
       }
     }
   }

@@ -29,6 +29,12 @@ const actions = {
   sortDownByStars({ commit }) {
     const items = state.items.sort((a, b) => b.meta.star - a.meta.star)
     commit('INIT_ITEMS', items)
+  },
+  sortUpByName({ commit }) {
+    // commit('INIT_ITEMS', items)
+  },
+  sortDownByName({ commit }) {
+    // commit('INIT_ITEMS', items)
   }
 }
 
