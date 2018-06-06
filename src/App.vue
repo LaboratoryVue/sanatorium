@@ -15,7 +15,10 @@
         </div>
       </div>
       <div class="col-6">
-        <h4 class="mb-4 text-center text-capitalize">по названию</h4>
+        <h4 class="mb-4 text-center text-capitalize">
+          по названию
+          <h6>slug</h6>
+        </h4>
         <div class="control">
           <button @click="sortUpByName()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
           <button @click="sortDownByName()" type="button" class="text-capitalize btn btn-primary mr-2">down</button>

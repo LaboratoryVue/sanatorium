@@ -41,7 +41,7 @@ const actions = {
     commit('INIT_ITEMS', items)
   },
   sortDownByName({ commit }) {
-    const items = state.items.sort((a, b) => b.meta.slug.toLowerCase() > a.meta.slug.toLowerCase())
+    const items = state.items.sort((a, b) => a.meta.slug.toLowerCase() < b.meta.slug.toLowerCase())
     commit('INIT_ITEMS', items)
   }
 }
