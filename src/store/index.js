@@ -24,7 +24,11 @@ const actions = {
   }
 }
 
-const getters = {}
+const getters = {
+  getItems (state) {
+    return state.items
+  }
+}
 
 const store = new Vuex.Store({
   state,
