@@ -5,18 +5,19 @@
 </template>
 
 <script>
-import ListItem from './ListItem'
-export default {
-  name: 'StartPage',
-  components: {
-    ListItem
-  },
-  computed: {
-    items () {
-      return this.$store.getters.getItems
+  import ListItem from './ListItem'
+  export default {
+    name: 'StartPage',
+    components: {
+      ListItem
+    },
+    props: {
+      items: {
+        type: Array,
+        default: () => []
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>

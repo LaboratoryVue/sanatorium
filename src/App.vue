@@ -9,8 +9,8 @@
       <h4 class="mb-4">фильтр по звездам и по названию объекта</h4>
       <div class="col-6">
         <h4 class="mb-4">по звездам</h4>
-        <button type="button" class="text-capitalize btn btn-primary mr-2">up</button>
-        <button type="button" class="text-capitalize btn btn-primary">down</button>
+        <button @click="sortUpByStars()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+        <button @click="sortDownByStars()" type="button" class="text-capitalize btn btn-primary">down</button>
       </div>
       <div class="col-6">
         <h4 class="mb-4">по названию объекта</h4>
@@ -20,21 +20,34 @@
     </div>
     <div class="row">
       <div class="col">
-        <StartPage />
+        <StartPage :items="items" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import StartPage from './components/StartPage.vue'
+  import StartPage from './components/StartPage.vue'
 
-export default {
-  name: 'app',
-  components: {
-    StartPage
+  export default {
+    name: 'app',
+    components: {
+      StartPage
+    },
+    computed: {
+      items () {
+        return this.$store.getters.getItems
+      }
+    },
+    methods: {
+      sortUpByStars() {
+        this.$store.dispatch('sortUpByStars')
+      },
+      sortDownByStars() {
+        this.$store.dispatch('sortDownByStars')
+      }
+    }
   }
-}
 </script>
 
 <style lang="scss">

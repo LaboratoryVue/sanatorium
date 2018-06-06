@@ -21,6 +21,14 @@ const actions = {
         commit('INIT_ITEMS', response.data.data)
       })
       .catch(e => console.log(e))
+  },
+  sortUpByStars({ commit }) {
+    const items = state.items.sort((a, b) => a.meta.star - b.meta.star)
+    commit('INIT_ITEMS', items)
+  },
+  sortDownByStars({ commit }) {
+    const items = state.items.sort((a, b) => b.meta.star - a.meta.star)
+    commit('INIT_ITEMS', items)
   }
 }
 
