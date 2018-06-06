@@ -53,6 +53,9 @@ const actions = {
 const getters = {
   getItems (state) {
     return state.items
+  },
+  getSelectedItem(state) {
+    return state.selectedItem
   }
 }
 
