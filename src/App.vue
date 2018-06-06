@@ -6,10 +6,16 @@
       </div>
     </div>
     <div class="row mb-4">
-      <div class="col">
-        <h4 class="mb-4">фильтр по звездам и по названию объекта</h4>
-        <button type="button" class="text-capitalize btn btn-primary mr-2">по звездам</button>
-        <button type="button" class="text-capitalize btn btn-primary">по названию объекта</button>
+      <h4 class="mb-4">фильтр по звездам и по названию объекта</h4>
+      <div class="col-6">
+        <h4 class="mb-4">по звездам</h4>
+        <button type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+        <button type="button" class="text-capitalize btn btn-primary">down</button>
+      </div>
+      <div class="col-6">
+        <h4 class="mb-4">по названию объекта</h4>
+        <button type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+        <button type="button" class="text-capitalize btn btn-primary mr-2">down</button>
       </div>
     </div>
     <div class="row">
