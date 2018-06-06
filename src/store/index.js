@@ -5,16 +5,12 @@ import axios from 'axios';
 Vue.use(Vuex)
 
 const state = {
-  items: [],
-  selectedItem: {}
+  items: []
 }
 
 const mutations = {
   INIT_ITEMS (state, payload) {
     state.items = payload
-  },
-  SELECTED_ITEM(state, payload) {
-    state.selectedItem = payload
   }
 }
 
@@ -22,7 +18,13 @@ const actions = {
   initItems({ commit }, payload) {
     axios.get('http://zdravdevadm.tour-shop.ru/api/v1/objects/')
       .then(response => {
-        commit('INIT_ITEMS', response.data.data)
+        const arr = response.data.data.map(el => {
+          return {
+            ...el,
+            show: false
+          }
+        })
+        commit('INIT_ITEMS', arr)
       })
       .catch(e => console.log(e))
   },
@@ -41,21 +43,12 @@ const actions = {
   sortDownByName({ commit }) {
     const items = state.items.sort((a, b) => b.meta.slug.toLowerCase() > a.meta.slug.toLowerCase())
     commit('INIT_ITEMS', items)
-  },
-  selectUniqueItem({ commit }, uid) {
-    const selectedItem = state.items.find(el => el.uid === uid)
-    if(selectedItem) {
-      commit('SELECTED_ITEM', selectedItem)
-    }
   }
 }
 
 const getters = {
   getItems (state) {
     return state.items
-  },
-  getSelectedItem(state) {
-    return state.selectedItem
   }
 }
 

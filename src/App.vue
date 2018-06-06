@@ -8,14 +8,18 @@
     <div class="row mb-4">
       <h4 class="mb-4">фильтр по звездам и по названию объекта</h4>
       <div class="col-6">
-        <h4 class="mb-4">по звездам</h4>
-        <button @click="sortUpByStars()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
-        <button @click="sortDownByStars()" type="button" class="text-capitalize btn btn-primary">down</button>
+        <h4 class="mb-4 text-center text-capitalize">по звездам</h4>
+        <div class="control">
+          <button @click="sortUpByStars()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+          <button @click="sortDownByStars()" type="button" class="text-capitalize btn btn-primary">down</button>
+        </div>
       </div>
       <div class="col-6">
-        <h4 class="mb-4">по названию объекта</h4>
-        <button @click="sortUpByName()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
-        <button @click="sortDownByName()" type="button" class="text-capitalize btn btn-primary mr-2">down</button>
+        <h4 class="mb-4 text-center text-capitalize">по названию</h4>
+        <div class="control">
+          <button @click="sortUpByName()" type="button" class="text-capitalize btn btn-primary mr-2">up</button>
+          <button @click="sortDownByName()" type="button" class="text-capitalize btn btn-primary mr-2">down</button>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -57,9 +61,12 @@
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .control {
+    text-align: center;
+  }
 </style>
