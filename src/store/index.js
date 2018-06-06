@@ -5,12 +5,16 @@ import axios from 'axios';
 Vue.use(Vuex)
 
 const state = {
-  items: []
+  items: [],
+  selectedItem: {}
 }
 
 const mutations = {
   INIT_ITEMS (state, payload) {
     state.items = payload
+  },
+  SELECTED_ITEM(state, payload) {
+    state.selectedItem = payload
   }
 }
 
@@ -37,6 +41,12 @@ const actions = {
   sortDownByName({ commit }) {
     const items = state.items.sort((a, b) => b.meta.slug.toLowerCase() > a.meta.slug.toLowerCase())
     commit('INIT_ITEMS', items)
+  },
+  selectUniqueItem({ commit }, uid) {
+    const selectedItem = state.items.find(el => el.uid === uid)
+    if(selectedItem) {
+      commit('SELECTED_ITEM', selectedItem)
+    }
   }
 }
 
