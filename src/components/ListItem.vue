@@ -1,6 +1,9 @@
 <template>
-  <a href="#" class="list-group-item list-group-item-action">
+  <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
     {{ item.meta.name }}
+    <span class="badge badge-info badge-pill">
+      {{ item.meta.star }}
+    </span>
   </a>
 </template>
 
