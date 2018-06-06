@@ -31,10 +31,12 @@ const actions = {
     commit('INIT_ITEMS', items)
   },
   sortUpByName({ commit }) {
-    // commit('INIT_ITEMS', items)
+    const items = state.items.sort((a, b) => a.meta.slug.toLowerCase() > b.meta.slug.toLowerCase())
+    commit('INIT_ITEMS', items)
   },
   sortDownByName({ commit }) {
-    // commit('INIT_ITEMS', items)
+    const items = state.items.sort((a, b) => b.meta.slug.toLowerCase() > a.meta.slug.toLowerCase())
+    commit('INIT_ITEMS', items)
   }
 }
 
