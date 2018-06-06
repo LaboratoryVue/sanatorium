@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <div class="row">
       <div class="col">
-        <StartPage msg="Welcome to Your Vue.js App"/>
+        <StartPage />
       </div>
     </div>
   </div>
